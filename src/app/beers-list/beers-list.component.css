@@ -1,0 +1,8 @@
+.beers-list {
+    padding: 16px;
+}
+
+.beers-list md-list {
+    max-width: 1024px;
+    margin: 0 auto;
+}

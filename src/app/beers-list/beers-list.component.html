@@ -1,3 +1,11 @@
-<p>
-  beers-list works!
-</p>
+<div class="beers-list">
+
+  <md-list>
+    <md-list-item *ngFor="let beer of beers">
+      <img md-list-icon [src]="beer.imageUrl"/>
+      <h4 md-line>{{ beer.name }}</h4>
+      <p md-line> {{ beer.description }}</p>
+    </md-list-item>
+  </md-list>
+
+</div>

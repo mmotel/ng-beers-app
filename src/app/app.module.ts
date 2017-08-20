@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { MdButtonModule, MdToolbarModule } from '@angular/material';
+import { HttpModule } from '@angular/http';
+import { MdButtonModule, MdToolbarModule, MdListModule } from '@angular/material';
 import 'hammerjs';
 
 
@@ -16,8 +17,8 @@ import { BeersListComponent } from './beers-list/beers-list.component';
     BeersListComponent,
   ],
   imports: [
-    BrowserModule, BrowserAnimationsModule,
-    MdButtonModule, MdToolbarModule,
+    BrowserModule, BrowserAnimationsModule, HttpModule,
+    MdButtonModule, MdToolbarModule, MdListModule,
     AppRoutingModule,
   ],
   providers: [],

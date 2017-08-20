@@ -1,15 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Beer } from './../beet';
+import { BeerService } from './../beer.service';
+
+
 @Component({
   selector: 'app-beers-list',
   templateUrl: './beers-list.component.html',
-  styleUrls: ['./beers-list.component.css']
+  styleUrls: ['./beers-list.component.css'],
+  providers: [ BeerService ]
 })
 export class BeersListComponent implements OnInit {
 
-  constructor() { }
+  public beers: Beer[];
 
-  ngOnInit() {
+  constructor (
+    private _beer: BeerService
+  ) { }
+
+  ngOnInit () {
+    this._beer.getBeers().subscribe( (beers) => {
+      this.beers = beers;
+    });
   }
 
 }
