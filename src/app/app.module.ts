@@ -1,19 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { MdButtonModule } from '@angular/material';
+import { MdButtonModule, MdToolbarModule } from '@angular/material';
 import 'hammerjs';
 
+
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BeersListComponent } from './beers-list/beers-list.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BeersListComponent,
   ],
   imports: [
     BrowserModule, BrowserAnimationsModule,
-    MdButtonModule
+    MdButtonModule, MdToolbarModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
