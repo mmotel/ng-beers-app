@@ -4,9 +4,12 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { BeersListComponent } from './beers-list/beers-list.component';
+import { BeerDetailsComponent } from './beer-details/beer-details.component';
+
 
 const APP_ROUTES = [
-  { path: '', component: BeersListComponent }
+  { path: '', component: BeersListComponent },
+  { path: 'details/:id', component: BeerDetailsComponent },
 ];
 
 @NgModule({

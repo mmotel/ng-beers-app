@@ -1,5 +1,9 @@
 <md-toolbar color="primary">
   <span>Beers App</span>
+
+  <a md-button [routerLink]="'/'">Start</a>
 </md-toolbar>
 
-<router-outlet>
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
