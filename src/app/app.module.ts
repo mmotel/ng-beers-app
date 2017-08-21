@@ -2,7 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
-import { MdButtonModule, MdToolbarModule, MdListModule, MdCardModule } from '@angular/material';
+import { MdButtonModule, MdToolbarModule, MdListModule, MdCardModule, MdIconModule,
+  MdProgressSpinnerModule
+} from '@angular/material';
 import 'hammerjs';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -19,7 +21,10 @@ import { BeerDetailsComponent } from './beer-details/beer-details.component';
   ],
   imports: [
     BrowserModule, BrowserAnimationsModule, HttpModule,
-    MdButtonModule, MdToolbarModule, MdListModule, MdCardModule,
+
+    MdButtonModule, MdToolbarModule, MdListModule, MdCardModule, MdIconModule,
+    MdProgressSpinnerModule,
+
     AppRoutingModule,
   ],
   providers: [],

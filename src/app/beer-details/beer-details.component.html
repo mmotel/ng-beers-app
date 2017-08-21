@@ -1,3 +1,14 @@
+<div class="actions">
+  <a md-button [routerLink]="'/'">
+    <md-icon>arrow_back</md-icon>
+    Back to beers list
+  </a>
+</div>
+
+<div *ngIf="!beer" class="loading">
+  <md-spinner></md-spinner>
+</div>
+
 <md-card *ngIf="beer">
   <md-card-header>
     <md-card-title>{{ beer.name }}</md-card-title>

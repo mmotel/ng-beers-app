@@ -1,4 +1,8 @@
-<md-nav-list>
+<div *ngIf="!beers" class="loading">
+  <md-spinner></md-spinner>
+</div>
+
+<md-nav-list *ngIf="beers">
   <md-list-item *ngFor="let beer of beers" 
     [routerLink]="['/details/', beer.id]">
     <img md-list-icon [src]="beer.imageUrl" />
