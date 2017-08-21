@@ -1,6 +1,4 @@
-<div *ngIf="!beers" class="loading">
-  <md-spinner></md-spinner>
-</div>
+<app-loading *ngIf="!beers"></app-loading>
 
 <md-nav-list *ngIf="beers">
   <md-list-item *ngFor="let beer of beers" 

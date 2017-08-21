@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BeersListComponent } from './beers-list/beers-list.component';
 import { BeerDetailsComponent } from './beer-details/beer-details.component';
+import { LoadingComponent } from './loading/loading.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { BeerDetailsComponent } from './beer-details/beer-details.component';
     AppComponent,
     BeersListComponent,
     BeerDetailsComponent,
-  ],
+    LoadingComponent
+],
   imports: [
     BrowserModule, BrowserAnimationsModule, HttpModule,
 

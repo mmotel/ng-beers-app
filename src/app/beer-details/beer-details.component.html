@@ -5,9 +5,7 @@
   </a>
 </div>
 
-<div *ngIf="!beer" class="loading">
-  <md-spinner></md-spinner>
-</div>
+<app-loading *ngIf="!beer"></app-loading>
 
 <md-card *ngIf="beer">
   <md-card-header>

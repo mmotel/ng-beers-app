@@ -5,7 +5,6 @@ import { BeerService } from './../beer.service';
 
 
 @Component({
-  selector: 'app-beers-list',
   templateUrl: './beers-list.component.html',
   styleUrls: ['./beers-list.component.css'],
   providers: [ BeerService ]
