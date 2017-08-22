@@ -24,12 +24,12 @@ import { LoadingComponent } from './loading/loading.component';
   imports: [
     BrowserModule, BrowserAnimationsModule, HttpModule,
 
+    AppRoutingModule,
+
     MdButtonModule, MdToolbarModule, MdListModule, MdCardModule, MdIconModule,
     MdProgressSpinnerModule,
-
-    AppRoutingModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
-export class AppModule { }
+export class AppModule {}
