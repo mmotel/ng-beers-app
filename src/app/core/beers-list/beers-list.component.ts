@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Beer } from './../../shared/beer';
-import { BeerService } from './../../shared/beer.service';
+import { Beer } from './../../shared/model/beer';
+import { BeerService } from './../../shared/service/beer.service';
 
 
 @Component({

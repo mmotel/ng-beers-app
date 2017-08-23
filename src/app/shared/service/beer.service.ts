@@ -3,7 +3,7 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
-import { Beer, IBeerRaw } from './beer';
+import { Beer, IBeerRaw } from '../model/beer';
 
 
 const BASE_BEERS_URL = 'https://api.punkapi.com/v2/beers';
