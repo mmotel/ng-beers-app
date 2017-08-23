@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { Beer } from './../beer';
-import { BeerService } from './../beer.service';
+import { Beer } from './../../shared/beer';
+import { BeerService } from './../../shared/beer.service';
 
 
 @Component({
