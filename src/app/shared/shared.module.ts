@@ -9,24 +9,29 @@ import {
 
 import { LoadingComponent } from './loading/loading.component';
 
+const MODULES = [
+    CommonModule, HttpModule, RouterModule,
+];
+
+const MD_MODULES = [
+  MdButtonModule, MdToolbarModule, MdListModule, MdCardModule, MdIconModule,
+  MdProgressSpinnerModule,
+];
+
+const COMPONENTS = [
+  LoadingComponent,
+];
+
 
 @NgModule({
   imports: [
-    CommonModule, HttpModule, RouterModule,
-
-    MdButtonModule, MdToolbarModule, MdListModule, MdCardModule, MdIconModule,
-    MdProgressSpinnerModule,
+    MODULES, MD_MODULES,
   ],
   declarations: [
-    LoadingComponent
+    COMPONENTS
   ],
   exports: [
-    CommonModule, HttpModule, RouterModule,
-
-    MdButtonModule, MdToolbarModule, MdListModule, MdCardModule, MdIconModule,
-    MdProgressSpinnerModule,
-
-    LoadingComponent
+    MODULES, MD_MODULES, COMPONENTS,
   ]
 })
 export class SharedModule { }
