@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
-import { CoreModule } from './core/core.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import 'hammerjs';
 
-import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
+import { SharedModule } from './shared/shared.module';
+import { CoreModule } from './core/core.module';
+import { RandomBeerModule } from './random-beer/random-beer.module';
 
 import { AppComponent } from './app.component';
 
@@ -19,7 +20,7 @@ import { AppComponent } from './app.component';
 
     AppRoutingModule,
 
-    CoreModule,
+    CoreModule, RandomBeerModule,
   ],
   providers: [],
   bootstrap: [ AppComponent ]
