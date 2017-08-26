@@ -8,6 +8,7 @@ import {
 } from '@angular/material';
 
 import { LoadingComponent } from './loading/loading.component';
+import { BeerCardComponent } from './beer-card/beer-card.component';
 
 const MODULES = [
     CommonModule, HttpModule, RouterModule,
@@ -19,7 +20,7 @@ const MD_MODULES = [
 ];
 
 const COMPONENTS = [
-  LoadingComponent,
+  LoadingComponent, BeerCardComponent
 ];
 
 
@@ -28,7 +29,7 @@ const COMPONENTS = [
     MODULES, MD_MODULES,
   ],
   declarations: [
-    COMPONENTS
+    COMPONENTS,
   ],
   exports: [
     MODULES, MD_MODULES, COMPONENTS,

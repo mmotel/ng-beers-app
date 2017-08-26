@@ -1,9 +1,4 @@
-div[md-card-image] {
-    height: 256px;
-    background-position: center top;
-    background-size: contain;
-    background-repeat: no-repeat;
-}
+
 
 div.actions {
     padding-bottom: 16px;
