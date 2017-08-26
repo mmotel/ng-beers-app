@@ -1,15 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Beer } from './../../shared/model/beer';
+import { BeerService } from './../../shared/service/beer.service';
+
+
 @Component({
   selector: 'app-random-beer',
   templateUrl: './random-beer.component.html',
-  styleUrls: ['./random-beer.component.css']
+  styleUrls: ['./random-beer.component.css'],
+  providers: [BeerService]
 })
 export class RandomBeerComponent implements OnInit {
 
-  constructor() { }
+  public beer: Beer;
 
-  ngOnInit() {
+  constructor (
+    private _beer: BeerService
+  ) {}
+
+  ngOnInit () {
+    this._beer.getRandomBeer().subscribe(beer => {
+      this.beer = beer;
+    });
   }
 
 }
