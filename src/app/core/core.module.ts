@@ -5,6 +5,7 @@ import { CoreRoutingModule } from './core-routing.module';
 
 import { BeersListComponent } from './beers-list/beers-list.component';
 import { BeerDetailsComponent } from './beer-details/beer-details.component';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -16,6 +17,10 @@ import { BeerDetailsComponent } from './beer-details/beer-details.component';
   declarations: [
     BeersListComponent,
     BeerDetailsComponent,
+    HeaderComponent,
+  ],
+  exports: [
+    HeaderComponent,
   ]
 })
 export class CoreModule { }
