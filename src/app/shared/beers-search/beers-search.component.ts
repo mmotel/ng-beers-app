@@ -1,0 +1,32 @@
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+
+
+@Component({
+  selector: 'app-beers-search',
+  templateUrl: './beers-search.component.html',
+  styleUrls: ['./beers-search.component.css']
+})
+export class BeersSearchComponent implements OnInit {
+
+  @Input() phrase: string = '';
+
+  @Output() typedPhrase: EventEmitter<string> = new EventEmitter<string>();
+
+  private _searchPhrase: string;
+
+  constructor() { }
+
+  ngOnInit() {
+    this._searchPhrase = this.phrase;
+  }
+
+  public get searchPhrase (): string {
+    return this._searchPhrase;
+  }
+
+  public set searchPhrase (value: string) {
+    this._searchPhrase = value;
+    this.typedPhrase.emit(this.searchPhrase);
+  }
+
+}

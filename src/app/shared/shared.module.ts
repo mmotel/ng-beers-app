@@ -2,26 +2,28 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import {
     MdButtonModule, MdToolbarModule, MdListModule, MdCardModule, MdIconModule,
-    MdProgressSpinnerModule
+    MdProgressSpinnerModule, MdInputModule
 } from '@angular/material';
 
 import { LoadingComponent } from './loading/loading.component';
 import { BeerCardComponent } from './beer-card/beer-card.component';
 import { BeersListComponent } from './beers-list/beers-list.component';
+import { BeersSearchComponent } from './beers-search/beers-search.component';
 
 const MODULES = [
-    CommonModule, HttpModule, RouterModule,
+    CommonModule, HttpModule, RouterModule, FormsModule,
 ];
 
 const MD_MODULES = [
   MdButtonModule, MdToolbarModule, MdListModule, MdCardModule, MdIconModule,
-  MdProgressSpinnerModule,
+  MdProgressSpinnerModule, MdInputModule,
 ];
 
 const COMPONENTS = [
-  LoadingComponent, BeerCardComponent, BeersListComponent,
+  LoadingComponent, BeerCardComponent, BeersListComponent, BeersSearchComponent,
 ];
 
 
