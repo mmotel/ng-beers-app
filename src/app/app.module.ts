@@ -9,6 +9,7 @@ import { CoreModule } from './core/core.module';
 import { RandomBeerModule } from './random-beer/random-beer.module';
 
 import { AppComponent } from './app.component';
+import { LocalStorageService } from './shared/service/local-storage/local-storage.service';
 
 
 @NgModule({
@@ -22,7 +23,9 @@ import { AppComponent } from './app.component';
 
     CoreModule, RandomBeerModule,
   ],
-  providers: [],
+  providers: [
+    LocalStorageService
+  ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {}
