@@ -15,6 +15,8 @@ export class BeersListComponent implements OnInit {
 
   private _beers: Beer[] = [];
 
+  private _searchPhrase: string = '';
+
   constructor (
     private _beer: BeerService
   ) { }
@@ -26,8 +28,18 @@ export class BeersListComponent implements OnInit {
     });
   }
 
-  public search (phrase: string) {
-    phrase = phrase.trim().toLowerCase();
+  public get searchPhrase (): string {
+    return this._searchPhrase;
+  }
+
+  public set searchPhrase (value: string) {
+    this._searchPhrase = value;
+    this.search();
+  }
+
+  public search () {
+    const phrase = this.searchPhrase.trim().toLowerCase();
+
     this.beers = this._beers
       .filter(beer =>
         beer.name.toLowerCase().indexOf(phrase) > -1 ||

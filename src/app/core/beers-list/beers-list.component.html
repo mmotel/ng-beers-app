@@ -1,5 +1,5 @@
 <app-beers-search
-  (typedPhrase)="search($event)"
+  [(phrase)]="searchPhrase"
 ></app-beers-search>
 
 <app-loading *ngIf="!beers"></app-loading>

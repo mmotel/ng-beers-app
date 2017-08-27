@@ -10,7 +10,7 @@ export class BeersSearchComponent implements OnInit {
 
   @Input() phrase: string = '';
 
-  @Output() typedPhrase: EventEmitter<string> = new EventEmitter<string>();
+  @Output() phraseChange: EventEmitter<string> = new EventEmitter<string>();
 
   private _searchPhrase: string;
 
@@ -26,7 +26,7 @@ export class BeersSearchComponent implements OnInit {
 
   public set searchPhrase (value: string) {
     this._searchPhrase = value;
-    this.typedPhrase.emit(this.searchPhrase);
+    this.phraseChange.emit(this.searchPhrase);
   }
 
 }
