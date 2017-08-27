@@ -1,3 +1,9 @@
-<p>
-  favourite-beers works!
+<app-loading *ngIf="!beers"></app-loading>
+
+<app-beers-list *ngIf="beers"
+  [beers]="beers"
+></app-beers-list>
+
+<p *ngIf="beers?.length === 0" class="empty-list">
+  No results found.
 </p>

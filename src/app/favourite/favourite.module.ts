@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { FavouriteRoutingModule } from './favourite-routing.module';
+import { SharedModule } from './../shared/shared.module';
 import { FavouriteBeersComponent } from './favourite-beers/favourite-beers.component';
+
 
 @NgModule({
   imports: [
-    CommonModule,
+    SharedModule,
     FavouriteRoutingModule
   ],
   declarations: [
