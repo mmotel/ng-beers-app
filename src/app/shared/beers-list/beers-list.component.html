@@ -1,0 +1,8 @@
+<md-nav-list>
+  <md-list-item *ngFor="let beer of beers" 
+    [routerLink]="['/details/', beer.id]">
+    <img md-list-icon [src]="beer.imageUrl" />
+    <h4 md-line>{{ beer.name }}</h4>
+    <p md-line> {{ beer.description }}</p>
+  </md-list-item>
+</md-nav-list>

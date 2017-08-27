@@ -9,6 +9,7 @@ import {
 
 import { LoadingComponent } from './loading/loading.component';
 import { BeerCardComponent } from './beer-card/beer-card.component';
+import { BeersListComponent } from './beers-list/beers-list.component';
 
 const MODULES = [
     CommonModule, HttpModule, RouterModule,
@@ -20,7 +21,7 @@ const MD_MODULES = [
 ];
 
 const COMPONENTS = [
-  LoadingComponent, BeerCardComponent
+  LoadingComponent, BeerCardComponent, BeersListComponent,
 ];
 
 
