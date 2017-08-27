@@ -2,7 +2,21 @@
   <md-list-item *ngFor="let beer of beers" 
     [routerLink]="['/details/', beer.id]">
     <img md-list-icon [src]="beer.imageUrl" />
-    <h4 md-line>{{ beer.name }}</h4>
+    <h4 md-line>
+      {{ beer.name }}
+
+      <button md-icon-button disabled 
+        *ngIf="showFavouriteActions && isFavourite(beer)">
+        <md-icon>star</md-icon>
+      </button>
+      
+      <button md-icon-button 
+        *ngIf="showFavouriteActions && !isFavourite(beer)"
+        (click)="addToFavourite(beer); preventNavigation($event)">
+        <md-icon>star_border</md-icon>
+      </button>
+
+    </h4>
     <p md-line> {{ beer.description }}</p>
   </md-list-item>
 </md-nav-list>

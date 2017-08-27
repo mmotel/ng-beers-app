@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { Beer } from './../model/beer';
 
@@ -11,10 +11,26 @@ import { Beer } from './../model/beer';
 export class BeersListComponent implements OnInit {
 
   @Input() beers: Beer[] = [];
+  @Input() favouriteBeers: Beer[] = [];
+  @Input() showFavouriteActions: boolean = false;
 
-  constructor() { }
+  @Output() addFavouriteBeer: EventEmitter<Beer> = new EventEmitter<Beer>();
 
-  ngOnInit() {
+  constructor () { }
+
+  ngOnInit () {
+  }
+
+  public isFavourite (beer: Beer): boolean {
+    return this.favouriteBeers.some(b => b.id === beer.id);
+  }
+
+  public addToFavourite (beer: Beer) {
+    this.addFavouriteBeer.emit(beer);
+  }
+
+  public preventNavigation (event: any) {
+    event.stopPropagation();
   }
 
 }

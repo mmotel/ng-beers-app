@@ -6,6 +6,9 @@
 
 <app-beers-list *ngIf="beers"
   [beers]="beers"
+  [favouriteBeers]="favouriteBeers"
+  [showFavouriteActions]="true"
+  (addFavouriteBeer)="addFavouriteBeer($event)"
 ></app-beers-list>
 
 <p *ngIf="beers?.length === 0" class="empty-list">
