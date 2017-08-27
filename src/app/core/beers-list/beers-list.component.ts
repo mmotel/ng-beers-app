@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
+import { BeersSearchComponent } from './../../shared/beers-search/beers-search.component';
 import { Beer } from './../../shared/model/beer';
 import { BeerService } from './../../shared/service/beer.service';
 
@@ -10,6 +11,8 @@ import { BeerService } from './../../shared/service/beer.service';
   providers: [ BeerService ]
 })
 export class BeersListComponent implements OnInit {
+
+  @ViewChild(BeersSearchComponent) private beersSearch: BeersSearchComponent;
 
   public beers: Beer[];
 
@@ -25,6 +28,7 @@ export class BeersListComponent implements OnInit {
     this._beer.getBeers().subscribe( (beers) => {
       this._beers = beers;
       this.beers = beers;
+      this.beersSearch.setActive();
     });
   }
 

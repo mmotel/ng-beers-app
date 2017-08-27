@@ -12,6 +12,8 @@ export class BeersSearchComponent implements OnInit {
 
   @Output() phraseChange: EventEmitter<string> = new EventEmitter<string>();
 
+  public isActive: boolean = false;
+
   private _searchPhrase: string;
 
   constructor() { }
@@ -27,6 +29,10 @@ export class BeersSearchComponent implements OnInit {
   public set searchPhrase (value: string) {
     this._searchPhrase = value;
     this.phraseChange.emit(this.searchPhrase);
+  }
+
+  public setActive () {
+    this.isActive = true;
   }
 
 }

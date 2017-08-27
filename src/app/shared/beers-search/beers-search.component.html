@@ -3,6 +3,7 @@
 <md-input-container>
   <input mdInput
     [(ngModel)]="searchPhrase"
+    [disabled]="!isActive"
     type="text"
     placeholder="Search..."
   >
