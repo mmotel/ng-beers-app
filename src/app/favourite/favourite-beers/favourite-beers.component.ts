@@ -15,6 +15,8 @@ export class FavouriteBeersComponent implements OnInit {
 
   public beers: Beer[];
 
+  public beerToRemove: Beer = null;
+
   private _beers: Beer[];
 
   constructor (
@@ -30,8 +32,19 @@ export class FavouriteBeersComponent implements OnInit {
   }
 
   public removeFromFavourite (beer: Beer) {
+    this.beerToRemove = beer;
+  }
+
+  public onRemoveFavouriteAccept () {
+    const beer = this.beerToRemove;
+    this.beerToRemove = null;
+
     this._favouriteBeer.removeFavouriteBeer(beer);
     this.setupFavouriteBeers();
+  }
+
+  public onRemoveFavouriteCancel () {
+    this.beerToRemove = null;
   }
 
   private setupFavouriteBeers () {

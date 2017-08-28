@@ -12,6 +12,7 @@ import { LoadingComponent } from './loading/loading.component';
 import { BeerCardComponent } from './beer-card/beer-card.component';
 import { BeersListComponent } from './beers-list/beers-list.component';
 import { BeersSearchComponent } from './beers-search/beers-search.component';
+import { PopupComponent } from './popup/popup.component';
 
 const MODULES = [
     CommonModule, HttpModule, RouterModule, FormsModule,
@@ -24,6 +25,7 @@ const MD_MODULES = [
 
 const COMPONENTS = [
   LoadingComponent, BeerCardComponent, BeersListComponent, BeersSearchComponent,
+  PopupComponent,
 ];
 
 

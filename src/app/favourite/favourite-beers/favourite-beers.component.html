@@ -11,3 +11,19 @@
 <p *ngIf="beers?.length === 0" class="empty-list">
   No results found.
 </p>
+
+<app-popup *ngIf="beerToRemove">
+  <h6>Remove favourite beer: {{ beerToRemove?.name }}</h6>
+
+  <p>Are you sure you want to remove this beer from favourites?</p>
+
+  <button md-button color="primary"
+    (click)="onRemoveFavouriteCancel()">
+    Cancel
+  </button>
+
+  <button md-button color="accent"
+    (click)="onRemoveFavouriteAccept()">
+    Yes, remove
+  </button>
+</app-popup>
