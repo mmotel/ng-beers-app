@@ -5,12 +5,15 @@
     <h4 md-line>
       {{ beer.name }}
 
-      <button md-icon-button disabled 
-        *ngIf="showFavouriteActions && isFavourite(beer)">
+      <button md-icon-button 
+        [disabled]="!isRemoveFromFavouriteActive" 
+        *ngIf="showFavouriteActions && isFavourite(beer)"
+        (click)="removeFromFaovurite(beer); preventNavigation($event)">
         <md-icon>star</md-icon>
       </button>
       
       <button md-icon-button 
+        [disabled]="!isAddToFavouriteActive" 
         *ngIf="showFavouriteActions && !isFavourite(beer)"
         (click)="addToFavourite(beer); preventNavigation($event)">
         <md-icon>star_border</md-icon>

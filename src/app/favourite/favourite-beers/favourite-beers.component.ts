@@ -15,18 +15,30 @@ export class FavouriteBeersComponent implements OnInit {
 
   public beers: Beer[];
 
+  private _beers: Beer[];
+
   constructor (
     private _beer: BeerService,
     private _favouriteBeer: FavouriteBeerService
   ) { }
 
   ngOnInit () {
+    this._beer.getBeers().subscribe((beers) => {
+      this._beers = beers;
+      this.setupFavouriteBeers();
+    });
+  }
+
+  public removeFromFavourite (beer: Beer) {
+    this._favouriteBeer.removeFavouriteBeer(beer);
+    this.setupFavouriteBeers();
+  }
+
+  private setupFavouriteBeers () {
     const favouriteBeersIds = this._favouriteBeer.getFavouriteBeers();
 
-    this._beer.getBeers().subscribe((beers) => {
-      this.beers = beers
+    this.beers = this._beers
         .filter(beer => favouriteBeersIds.find(beerId => beerId === beer.id) );
-    });
   }
 
 }

@@ -13,8 +13,11 @@ export class BeersListComponent implements OnInit {
   @Input() beers: Beer[] = [];
   @Input() favouriteBeers: Beer[] = [];
   @Input() showFavouriteActions: boolean = false;
+  @Input() isAddToFavouriteActive: boolean = false;
+  @Input() isRemoveFromFavouriteActive: boolean = false;
 
   @Output() addFavouriteBeer: EventEmitter<Beer> = new EventEmitter<Beer>();
+  @Output() removeFromFavouriteBeer: EventEmitter<Beer> = new EventEmitter<Beer>();
 
   constructor () { }
 
@@ -27,6 +30,10 @@ export class BeersListComponent implements OnInit {
 
   public addToFavourite (beer: Beer) {
     this.addFavouriteBeer.emit(beer);
+  }
+
+  public removeFromFaovurite (beer: Beer) {
+    this.removeFromFavouriteBeer.emit(beer);
   }
 
   public preventNavigation (event: any) {

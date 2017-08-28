@@ -2,6 +2,10 @@
 
 <app-beers-list *ngIf="beers"
   [beers]="beers"
+  [favouriteBeers]="beers"
+  [showFavouriteActions]="true"
+  [isRemoveFromFavouriteActive]="true"
+  (removeFromFavouriteBeer)="removeFromFavourite($event)"
 ></app-beers-list>
 
 <p *ngIf="beers?.length === 0" class="empty-list">
