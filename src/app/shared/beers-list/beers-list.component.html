@@ -1,5 +1,5 @@
 <md-nav-list>
-  <md-list-item *ngFor="let beer of beers" 
+  <md-list-item *ngFor="let beer of beersToDisplay" 
     [routerLink]="['/details/', beer.id]">
     <img md-list-icon [src]="beer.imageUrl" />
     <h4 md-line>

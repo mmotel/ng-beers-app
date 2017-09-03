@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnChanges, Input, Output, EventEmitter } from '@angular/core';
 
 import { Beer } from './../model/beer';
 
@@ -8,7 +8,7 @@ import { Beer } from './../model/beer';
   templateUrl: './beers-list.component.html',
   styleUrls: ['./beers-list.component.css']
 })
-export class BeersListComponent implements OnInit {
+export class BeersListComponent implements OnChanges {
 
   @Input() beers: Beer[] = [];
   @Input() favouriteBeers: Beer[] = [];
@@ -19,9 +19,13 @@ export class BeersListComponent implements OnInit {
   @Output() addFavouriteBeer: EventEmitter<Beer> = new EventEmitter<Beer>();
   @Output() removeFromFavouriteBeer: EventEmitter<Beer> = new EventEmitter<Beer>();
 
+  public beersToDisplay: Beer[] = [];
+
   constructor () { }
 
-  ngOnInit () {
+  ngOnChanges () {
+    this.beersToDisplay = this.beers
+      .sort( (b1: Beer, b2: Beer) => b1.name.localeCompare(b2.name));
   }
 
   public isFavourite (beer: Beer): boolean {
