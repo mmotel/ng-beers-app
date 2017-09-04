@@ -14,6 +14,8 @@ export class BeerDetailsComponent implements OnInit {
 
   public beer: Beer;
 
+  public backUrl: string = '/';
+
   constructor (
     private _activatedRoute: ActivatedRoute,
     private _beer: BeerService
@@ -21,6 +23,11 @@ export class BeerDetailsComponent implements OnInit {
 
   ngOnInit () {
     const beerId: number = +this._activatedRoute.snapshot.params['id'];
+    const backUrl = this._activatedRoute.snapshot.params['back'];
+
+    if (backUrl) {
+      this.backUrl = backUrl;
+    }
 
     this._beer.getBeer(beerId).subscribe(beer => {
       this.beer = beer;

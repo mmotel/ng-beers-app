@@ -15,6 +15,7 @@ export class BeersListComponent implements OnChanges {
   @Input() showFavouriteActions: boolean = false;
   @Input() isAddToFavouriteActive: boolean = false;
   @Input() isRemoveFromFavouriteActive: boolean = false;
+  @Input() backUrl: string;
 
   @Output() addFavouriteBeer: EventEmitter<Beer> = new EventEmitter<Beer>();
   @Output() removeFromFavouriteBeer: EventEmitter<Beer> = new EventEmitter<Beer>();
@@ -26,6 +27,16 @@ export class BeersListComponent implements OnChanges {
   ngOnChanges () {
     this.beersToDisplay = this.beers
       .sort( (b1: Beer, b2: Beer) => b1.name.localeCompare(b2.name));
+  }
+
+  public get additionalParams (): {[key: string]: string} {
+    if (this.backUrl) {
+      return {
+        back: this.backUrl
+      };
+    } else {
+      return {};
+    }
   }
 
   public isFavourite (beer: Beer): boolean {
