@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 
 
 const APP_ROUTES = [
-
+  {path: '', redirectTo: '/list', pathMatch: 'full'}
 ];
 
 @NgModule({
