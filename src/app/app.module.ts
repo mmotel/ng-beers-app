@@ -6,8 +6,6 @@ import 'hammerjs';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
-import { RandomBeerModule } from './random-beer/random-beer.module';
-import { FavouriteModule } from './favourite/favourite.module';
 
 import { AppComponent } from './app.component';
 import { LocalStorageService } from './shared/service/local-storage/local-storage.service';
@@ -22,7 +20,7 @@ import { LocalStorageService } from './shared/service/local-storage/local-storag
 
     AppRoutingModule,
 
-    CoreModule, RandomBeerModule, FavouriteModule,
+    CoreModule,
   ],
   providers: [
     LocalStorageService

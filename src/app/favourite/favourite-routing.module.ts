@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { FavouriteBeersComponent } from './favourite-beers/favourite-beers.component';
 
 const routes: Routes = [
-  {path: 'favourite', component: FavouriteBeersComponent}
+  {path: '', component: FavouriteBeersComponent}
 ];
 
 
