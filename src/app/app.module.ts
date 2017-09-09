@@ -9,6 +9,7 @@ import { CoreModule } from './core/core.module';
 
 import { AppComponent } from './app.component';
 import { LocalStorageService } from './shared/service/local-storage/local-storage.service';
+import { IsAdultGuard } from './shared/guard/is-adult/is-adult.guard';
 
 
 @NgModule({
@@ -23,7 +24,9 @@ import { LocalStorageService } from './shared/service/local-storage/local-storag
     CoreModule,
   ],
   providers: [
-    LocalStorageService
+    LocalStorageService,
+
+    IsAdultGuard
   ],
   bootstrap: [ AppComponent ]
 })

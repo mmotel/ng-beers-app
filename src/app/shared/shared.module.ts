@@ -14,6 +14,7 @@ import { BeersListComponent } from './beers-list/beers-list.component';
 import { BeersSearchComponent } from './beers-search/beers-search.component';
 import { PopupComponent } from './popup/popup.component';
 
+
 const MODULES = [
     CommonModule, HttpModule, RouterModule, FormsModule,
 ];

@@ -3,10 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { BeerDetailsComponent } from './beer-details/beer-details.component';
 import { BeersListComponent } from './beers-list/beers-list.component';
+import { IsAdultGuard } from './../shared/guard/is-adult/is-adult.guard';
 
 const routes: Routes = [
-  { path: 'list', component: BeersListComponent },
-  { path: 'details/:id', component: BeerDetailsComponent }
+  { path: 'list', component: BeersListComponent, canActivate: [IsAdultGuard] },
+  { path: 'details/:id', component: BeerDetailsComponent, canActivate: [IsAdultGuard] }
 ];
 
 
