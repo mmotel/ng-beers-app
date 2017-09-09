@@ -13,6 +13,8 @@ import { BeerCardComponent } from './beer-card/beer-card.component';
 import { BeersListComponent } from './beers-list/beers-list.component';
 import { BeersSearchComponent } from './beers-search/beers-search.component';
 import { PopupComponent } from './popup/popup.component';
+import { NoteBoxComponent } from './note-box/note-box.component';
+
 
 
 const MODULES = [
@@ -26,7 +28,7 @@ const MD_MODULES = [
 
 const COMPONENTS = [
   LoadingComponent, BeerCardComponent, BeersListComponent, BeersSearchComponent,
-  PopupComponent,
+  PopupComponent, NoteBoxComponent,
 ];
 
 
