@@ -39,8 +39,7 @@ export class BeerDetailsComponent implements OnInit {
     });
   }
 
-  public onSaveNote (note: string) {
-    this.beerNote = note;
+  public onSaveNote () {
     this._note.setNote(this.beer.id, this.beerNote);
   }
 

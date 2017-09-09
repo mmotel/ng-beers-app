@@ -12,6 +12,6 @@
 ></app-beer-card>
 
 <app-note-box *ngIf="beer"
-  [note]="beerNote"
-  (save)="onSaveNote($event)"
+  [(note)]="beerNote"
+  (save)="onSaveNote()"
 ></app-note-box>
