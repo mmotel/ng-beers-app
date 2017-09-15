@@ -11,8 +11,7 @@ const UNSAVED_CHANGES_LEAVE = 'Are you sure you want to leave without saving not
 
 @Component({
   templateUrl: './beer-details.component.html',
-  styleUrls: ['./beer-details.component.css'],
-  providers: [ BeerService, NoteService ]
+  styleUrls: ['./beer-details.component.css']
 })
 export class BeerDetailsComponent implements OnInit, CanComponentDeactivate {
 

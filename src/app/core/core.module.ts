@@ -6,6 +6,7 @@ import { CoreRoutingModule } from './core-routing.module';
 import { BeersListComponent } from './beers-list/beers-list.component';
 import { BeerDetailsComponent } from './beer-details/beer-details.component';
 import { HeaderComponent } from './header/header.component';
+import { NoteService } from './../shared/service/note/note.service';
 
 
 @NgModule({
@@ -21,6 +22,9 @@ import { HeaderComponent } from './header/header.component';
   ],
   exports: [
     HeaderComponent,
+  ],
+  providers: [
+    NoteService
   ]
 })
 export class CoreModule { }

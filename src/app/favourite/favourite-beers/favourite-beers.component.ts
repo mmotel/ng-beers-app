@@ -8,8 +8,7 @@ import { FavouriteBeerService } from './../service/favourite-beer/favourite-beer
 @Component({
   selector: 'app-favourite-beers',
   templateUrl: './favourite-beers.component.html',
-  styleUrls: ['./favourite-beers.component.css'],
-  providers: [BeerService, FavouriteBeerService]
+  styleUrls: ['./favourite-beers.component.css']
 })
 export class FavouriteBeersComponent implements OnInit {
 
