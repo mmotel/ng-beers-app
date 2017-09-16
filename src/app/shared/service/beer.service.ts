@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/do';
 
 import { Beer, IBeerRaw } from '../model/beer';
+import { RestClientService } from './rest-client/rest-client.service';
 
-const BASE_BEERS_URL = 'https://api.punkapi.com/v2/beers';
+const BASE_BEERS_URL = 'beers';
 const RANDOM_BEER_SUFFIX = '/random';
 const RANDOM_BEER_URL = `${BASE_BEERS_URL}${RANDOM_BEER_SUFFIX}`;
 
@@ -18,17 +18,14 @@ export class BeerService {
   private _beersList: Beer[];
 
   constructor (
-    private _http: Http
+    private _restClient: RestClientService
   ) { }
 
   public getBeers (): Observable<Beer[]> {
     if (this._beersList) {
       return Observable.of(this._beersList);
     } else {
-      return this._http.get(BASE_BEERS_URL)
-        .map( (response: Response) => {
-          return response.json();
-        })
+      return this._restClient.get(BASE_BEERS_URL)
         .map(this.mapBeers)
         .do(beers => {
           this._beersList = beers;
@@ -38,18 +35,12 @@ export class BeerService {
   }
 
   public getBeer (beerId: number): Observable<Beer> {
-    return this._http.get(`${BASE_BEERS_URL}/${beerId}`)
-      .map( (response) => {
-        return response.json();
-      })
+    return this._restClient.get(`${BASE_BEERS_URL}/${beerId}`)
       .map(this.mapBeer);
   }
 
   public getRandomBeer (): Observable<Beer> {
-    return this._http.get(RANDOM_BEER_URL)
-      .map( (response) => {
-        return response.json();
-      })
+    return this._restClient.get(RANDOM_BEER_URL)
       .map(this.mapBeer);
   }
 
