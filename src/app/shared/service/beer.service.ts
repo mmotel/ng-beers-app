@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/observable/of';
+import 'rxjs/add/operator/do';
 
 import { Beer, IBeerRaw } from '../model/beer';
 
@@ -13,16 +15,26 @@ const RANDOM_BEER_URL = `${BASE_BEERS_URL}${RANDOM_BEER_SUFFIX}`;
 @Injectable()
 export class BeerService {
 
+  private _beersList: Beer[];
+
   constructor (
     private _http: Http
   ) { }
 
   public getBeers (): Observable<Beer[]> {
-    return this._http.get(BASE_BEERS_URL)
-      .map( (response: Response) => {
-        return response.json();
-      })
-      .map(this.mapBeers);
+    if (this._beersList) {
+      return Observable.of(this._beersList);
+    } else {
+      return this._http.get(BASE_BEERS_URL)
+        .map( (response: Response) => {
+          return response.json();
+        })
+        .map(this.mapBeers)
+        .do(beers => {
+          this._beersList = beers;
+        });
+    }
+
   }
 
   public getBeer (beerId: number): Observable<Beer> {
