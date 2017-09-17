@@ -14,6 +14,7 @@ import { BeersListComponent } from './beers-list/beers-list.component';
 import { BeersSearchComponent } from './beers-search/beers-search.component';
 import { PopupComponent } from './popup/popup.component';
 import { NoteBoxComponent } from './note-box/note-box.component';
+import { CutWordsPipe } from './pipe/cut-words/cut-words.pipe';
 
 
 
@@ -31,16 +32,20 @@ const COMPONENTS = [
   PopupComponent, NoteBoxComponent,
 ];
 
+const PIPES = [
+  CutWordsPipe,
+];
+
 
 @NgModule({
   imports: [
     MODULES, MD_MODULES,
   ],
   declarations: [
-    COMPONENTS,
+    COMPONENTS, PIPES,
   ],
   exports: [
-    MODULES, MD_MODULES, COMPONENTS,
+    MODULES, MD_MODULES, COMPONENTS, PIPES,
   ]
 })
 export class SharedModule { }

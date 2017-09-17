@@ -20,6 +20,6 @@
       </button>
 
     </h4>
-    <p md-line> {{ beer.description }}</p>
+    <p md-line> {{ beer.description | cutWords: 80 }}</p>
   </md-list-item>
 </md-nav-list>
