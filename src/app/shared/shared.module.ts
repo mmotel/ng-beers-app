@@ -15,6 +15,7 @@ import { BeersSearchComponent } from './beers-search/beers-search.component';
 import { PopupComponent } from './popup/popup.component';
 import { NoteBoxComponent } from './note-box/note-box.component';
 import { CutWordsPipe } from './pipe/cut-words/cut-words.pipe';
+import { AutoFocusDirective } from './directive/auto-focus.directive';
 
 
 
@@ -36,16 +37,20 @@ const PIPES = [
   CutWordsPipe,
 ];
 
+const DIRECTIVES = [
+  AutoFocusDirective,
+];
+
 
 @NgModule({
   imports: [
     MODULES, MD_MODULES,
   ],
   declarations: [
-    COMPONENTS, PIPES,
+    COMPONENTS, PIPES, DIRECTIVES,
   ],
   exports: [
-    MODULES, MD_MODULES, COMPONENTS, PIPES,
+    MODULES, MD_MODULES, COMPONENTS, PIPES, DIRECTIVES,
   ]
 })
 export class SharedModule { }

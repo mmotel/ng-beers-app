@@ -4,6 +4,8 @@
   <input mdInput
     [(ngModel)]="searchPhrase"
     [disabled]="!isActive"
+    appAutoFocus
+    [appAutoFocusActive]="isActive"
     type="text"
     placeholder="Search..."
   >
